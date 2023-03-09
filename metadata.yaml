@@ -1,0 +1,32 @@
+name: munge
+
+subordinate: true
+
+summary: |
+    Subordinate charm for that provides the `munge` key authentication service.
+    Munge homepage: https://github.com/dun/munge
+
+maintainers:
+    - OmniVector Solutions <admin@omnivector.solutions>
+
+description: |
+    This charm will install the munge package on centos and ubuntu operating systems.
+
+tags:
+    - hpc
+    - auth
+    - slurm
+
+series:
+    - focal
+    - jammy
+    - centos9
+
+provides:
+  munge:
+    interface: munge
+
+requires:
+  juju-info:
+    interface: juju-info
+    scope: container
