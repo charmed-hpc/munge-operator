@@ -129,7 +129,7 @@ class MungeOpsBase:
 
     def md5_sum_from_munge_key_on_fs(self) -> str:
         """Return the md5sum from the munge.key that exists on the system."""
-        munge_key_bytes = Path(self._munge_key_path).read_bytes()
+        munge_key_bytes = self._munge_key_path.read_bytes()
         return hashlib.md5(munge_key_bytes).hexdigest()
 
     def generate_munge_data(self, munge_key_as_str: Optional[str] = None) -> MungeData:
